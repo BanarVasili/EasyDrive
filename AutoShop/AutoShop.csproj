@@ -123,7 +123,6 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-        <Content Include="Content\css\.DS_Store" />
         <Content Include="Content\css\animate.min.css" />
         <Content Include="Content\css\bootstrap-grid.css" />
         <Content Include="Content\css\bootstrap-grid.css.map" />
@@ -182,6 +181,9 @@
         <Content Include="Scripts\plugin.js" />
         <Content Include="Scripts\popper.min.js" />
         <Content Include="Scripts\slider-setting.js" />
+        <Content Include="Views\Home\Client.cshtml" />
+        <Content Include="Views\Home\Services.cshtml" />
+        <Content Include="Views\Home\Gallery.cshtml" />
         <Content Include="Web.config"/>
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>
