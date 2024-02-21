@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="AutoShop.WebUI.MvcApplication" Language="C#" %>

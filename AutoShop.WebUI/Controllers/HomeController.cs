@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace AutoShop.Controllers
+namespace AutoShop.WebUI.Controllers
 {
     public class HomeController : Controller
     {

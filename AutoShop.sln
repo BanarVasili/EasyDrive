@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop", "AutoShop\AutoShop.csproj", "{03C5D2E1-6772-4720-8FAA-2D27A89CB871}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop.WebUI", "AutoShop.WebUI\AutoShop.WebUI.csproj", "{03C5D2E1-6772-4720-8FAA-2D27A89CB871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace AutoShop
+namespace AutoShop.WebUI
 {
     public class FilterConfig
     {
