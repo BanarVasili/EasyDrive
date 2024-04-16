@@ -1,8 +1,10 @@
-﻿using System.Web.Mvc;
+﻿
+using System.Web.Mvc;
+using AutoShop.WebUI.Security;
 
 namespace AutoShop.WebUI.Controllers
 {
-    [Authorize(Roles = "Moderator")]
+    [Authorize2]
     public class AdminController : Controller
     {
         public ActionResult Index()
