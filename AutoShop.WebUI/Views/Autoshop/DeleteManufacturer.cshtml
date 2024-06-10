@@ -1,0 +1,22 @@
+﻿@model Autoshop.Domain.Manufacturer
+
+@{
+ViewBag.Title = "Manufacturer Details";
+Layout = "../Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Manufacturer Details</h2>
+
+<div>
+    <h4>Manufacturer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd>@Html.DisplayFor(model => model.Name)</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+</p>

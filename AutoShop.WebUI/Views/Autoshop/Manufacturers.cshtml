@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Autoshop.Domain.Manufacturer>
+
+@{
+ViewBag.Title = "Manufacturers";
+Layout = "../Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-light">Manufacturers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateManufacturer", null, new { @class = "btn btn-primary" })
+</p>
+
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>
+                @Html.ActionLink("Details", "ManufacturerDetails", new { id = item.ManufacturerId }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Edit", "EditManufacturer", new { id = item.ManufacturerId }, new { @class = "btn btn-warning btn-sm" }) |
+                @Html.ActionLink("Delete", "DeleteManufacturer", new { id = item.ManufacturerId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>
