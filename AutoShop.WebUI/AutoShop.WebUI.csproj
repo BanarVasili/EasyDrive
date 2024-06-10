@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')"/>
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+    <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,13 +16,13 @@
         <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
         <MvcBuildViews>false</MvcBuildViews>
         <UseIISExpress>true</UseIISExpress>
-        <Use64BitIISExpress/>
-        <IISExpressSSLPort/>
-        <IISExpressAnonymousAuthentication/>
-        <IISExpressWindowsAuthentication/>
-        <IISExpressUseClassicPipelineMode/>
-        <UseGlobalApplicationHostFile/>
-        <NuGetPackageImportStamp/>
+        <Use64BitIISExpress />
+        <IISExpressSSLPort />
+        <IISExpressAnonymousAuthentication />
+        <IISExpressWindowsAuthentication />
+        <IISExpressUseClassicPipelineMode />
+        <UseGlobalApplicationHostFile />
+        <NuGetPackageImportStamp />
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -42,24 +43,84 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="Microsoft.CSharp"/>
-        <Reference Include="System"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Drawing"/>
-        <Reference Include="System.Web.DynamicData"/>
-        <Reference Include="System.Web.ApplicationServices"/>
-        <Reference Include="System.ComponentModel.DataAnnotations"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Data.DataSetExtensions"/>
-        <Reference Include="System.Xml.Linq"/>
-        <Reference Include="System.Web"/>
-        <Reference Include="System.Web.Extensions"/>
-        <Reference Include="System.Web.Abstractions"/>
-        <Reference Include="System.Web.Routing"/>
-        <Reference Include="System.Xml"/>
-        <Reference Include="System.Configuration"/>
-        <Reference Include="System.Web.Services"/>
-        <Reference Include="System.EnterpriseServices"/>
+        <Reference Include="Autofac, Version=8.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+          <HintPath>..\packages\Autofac.8.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+        </Reference>
+        <Reference Include="Autofac.Extensions.DependencyInjection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+          <HintPath>..\packages\Autofac.Extensions.DependencyInjection.9.0.0\lib\netstandard2.0\Autofac.Extensions.DependencyInjection.dll</HintPath>
+        </Reference>
+        <Reference Include="Autofac.Integration.Mvc, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+          <HintPath>..\packages\Autofac.Mvc5.6.1.0\lib\net472\Autofac.Integration.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data" />
+        <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Channels, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Transactions" />
+        <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.DynamicData" />
+        <Reference Include="System.Web.ApplicationServices" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Web" />
+        <Reference Include="System.Web.Extensions" />
+        <Reference Include="System.Web.Abstractions" />
+        <Reference Include="System.Web.Routing" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Configuration" />
+        <Reference Include="System.Web.Services" />
+        <Reference Include="System.EnterpriseServices" />
         <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
             <Private>True</Private>
             <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -113,14 +174,18 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="App_Start\BundleConfig.cs"/>
-        <Compile Include="App_Start\FilterConfig.cs"/>
-        <Compile Include="App_Start\RouteConfig.cs"/>
-        <Compile Include="Controllers\HomeController.cs"/>
+        <Compile Include="App_Start\BundleConfig.cs" />
+        <Compile Include="App_Start\FilterConfig.cs" />
+        <Compile Include="App_Start\RouteConfig.cs" />
+        <Compile Include="Controllers\AccountController.cs" />
+        <Compile Include="Controllers\AdminController.cs" />
+        <Compile Include="Controllers\AutoshopController.cs" />
+        <Compile Include="Controllers\HomeController.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Security\AuthorizeAttribute.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\css\animate.min.css" />
@@ -162,8 +227,8 @@
         <Content Include="Content\images\img-3.png" />
         <Content Include="Content\images\logo.png" />
         <Content Include="Content\images\quick-icon.png" />
-        <Content Include="favicon.ico"/>
-        <Content Include="Global.asax"/>
+        <Content Include="favicon.ico" />
+        <Content Include="Global.asax" />
         <Content Include="Scripts\bootstrap.bundle.js" />
         <Content Include="Scripts\bootstrap.bundle.js.map" />
         <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -181,40 +246,69 @@
         <Content Include="Scripts\plugin.js" />
         <Content Include="Scripts\popper.min.js" />
         <Content Include="Scripts\slider-setting.js" />
+        <Content Include="Views\Account\Login.cshtml" />
+        <Content Include="Views\Account\Register.cshtml" />
+        <Content Include="Views\Admin\Index.cshtml" />
+        <Content Include="Views\Autoshop\CarDetails.cshtml" />
+        <Content Include="Views\Autoshop\Cars.cshtml" />
+        <Content Include="Views\Autoshop\CreateCar.cshtml" />
+        <Content Include="Views\Autoshop\CreateManufacturer.cshtml" />
+        <Content Include="Views\Autoshop\DeleteCar.cshtml" />
+        <Content Include="Views\Autoshop\DeleteManufacturer.cshtml" />
+        <Content Include="Views\Autoshop\EditCar.cshtml" />
+        <Content Include="Views\Autoshop\EditManufacturer.cshtml" />
+        <Content Include="Views\Autoshop\Index.cshtml" />
+        <Content Include="Views\Autoshop\ManufacturerDetails.cshtml" />
+        <Content Include="Views\Autoshop\Manufacturers.cshtml" />
         <Content Include="Views\Home\Client.cshtml" />
         <Content Include="Views\Home\Services.cshtml" />
         <Content Include="Views\Home\Gallery.cshtml" />
-        <Content Include="Web.config"/>
+        <Content Include="Views\Shared\_AdminLayout.cshtml" />
+        <Content Include="Views\Shared\_AuthLayout.cshtml" />
+        <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>
         </Content>
         <Content Include="Web.Release.config">
             <DependentUpon>Web.config</DependentUpon>
         </Content>
-        <Content Include="Views\Web.config"/>
-        <Content Include="Views\_ViewStart.cshtml"/>
-        <Content Include="Views\Shared\Error.cshtml"/>
-        <Content Include="Views\Shared\_Layout.cshtml"/>
-        <Content Include="Views\Home\About.cshtml"/>
-        <Content Include="Views\Home\Contact.cshtml"/>
-        <Content Include="Views\Home\Index.cshtml"/>
+        <Content Include="Views\Web.config" />
+        <Content Include="Views\_ViewStart.cshtml" />
+        <Content Include="Views\Shared\Error.cshtml" />
+        <Content Include="Views\Shared\_Layout.cshtml" />
+        <Content Include="Views\Home\About.cshtml" />
+        <Content Include="Views\Home\Contact.cshtml" />
+        <Content Include="Views\Home\Index.cshtml" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="App_Data"/>
+        <Folder Include="App_Data" />
         <Folder Include="fonts\" />
-        <Folder Include="Models"/>
     </ItemGroup>
     <ItemGroup>
-        <None Include="packages.config"/>
+        <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Autoshop.Application\Autoshop.Application.csproj">
+        <Project>{ab987fd3-a44b-4532-83a7-639ea983845c}</Project>
+        <Name>Autoshop.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Autoshop.Domain\Autoshop.Domain.csproj">
+        <Project>{873c75be-2a40-4698-a6fe-4e5546f17a7b}</Project>
+        <Name>Autoshop.Domain</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Autoshop.Infrastructure\Autoshop.Infrastructure.csproj">
+        <Project>{ae9998cb-f6d8-4d4e-929c-f9f6f9908cc5}</Project>
+        <Name>Autoshop.Infrastructure</Name>
+      </ProjectReference>
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     </PropertyGroup>
-    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets"/>
-    <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''"/>
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+    <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
     <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
-        <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)"/>
+        <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
     </Target>
     <ProjectExtensions>
         <VisualStudio>
@@ -227,7 +321,7 @@
                     <IISUrl>http://localhost:5000/</IISUrl>
                     <NTLMAuthentication>False</NTLMAuthentication>
                     <UseCustomServer>False</UseCustomServer>
-                    <CustomServerUrl/>
+                    <CustomServerUrl />
                     <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
                 </WebProjectProperties>
             </FlavorProperties>
@@ -237,8 +331,13 @@
         <PropertyGroup>
             <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
         </PropertyGroup>
-        <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))"/>
+        <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+        <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+        <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+        <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     </Target>
+    <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+    <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">

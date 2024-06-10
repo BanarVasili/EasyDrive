@@ -41,13 +41,12 @@
                     {
                         @Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav-link" })
                         @Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav-link" })
-
                     }
                     else
                     {
-                        if (User.IsInRole("Moderator"))
+                        if (User.IsInRole("Administrator"))
                         {
-                            @Html.ActionLink("Admin Panel", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
+                            @Html.ActionLink("Admin Panel", "Index", "Autoshop", new { area = "" }, new { @class = "nav-link" })
                         }
                         @Html.ActionLink("Logout", "Logout", "Account", new { area = "" }, new { @class = "nav-link" })
                     }

@@ -28,7 +28,7 @@ namespace AutoShop.WebUI
             var builder = new ContainerBuilder();
 
             // Регистрация DbContext. Предполагается, что MyStoreContext - ваш класс контекста
-            builder.RegisterType<JewelryStoreContext>().AsSelf().InstancePerRequest();
+            builder.RegisterType<CarShopContext>().AsSelf().InstancePerRequest();
 
             // Остальные регистрации зависимостей
             // builder.RegisterType<SomeDependency>().As<ISomeInterface>();
