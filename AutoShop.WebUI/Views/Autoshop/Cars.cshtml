@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Autoshop.Domain.Car>
+
+@{
+ViewBag.Title = "Cars";
+Layout = "../Shared/_AdminLayout.cshtml";
+}
+
+<h2>Cars</h2>
+
+<div class="mb-4">
+    @Html.ActionLink("Create New", "CreateCar", null, new { @class = "btn btn-primary", @title = "Create a new car" })
+</div>
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Model</th>
+        <th>Manufacturer</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Model)</td>
+        <td>@Html.DisplayFor(modelItem => item.Manufacturer.Name)</td>
+        <td>
+            @Html.ActionLink("Details", "CarDetails", new { id = item.CarId }, new { @class = "btn btn-info btn-sm", @title = "View details" }) |
+            @Html.ActionLink("Edit", "EditCar", new { id = item.CarId }, new { @class = "btn btn-warning btn-sm", @title = "Edit this car" }) |
+            @Html.ActionLink("Delete", "DeleteCar", new { id = item.CarId }, new { @class = "btn btn-danger btn-sm", @title = "Delete this car" })
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+<!-- Additional section about sales and customer interaction -->
+<div class="card mt-4 bg-dark text-white">
+    <div class="card-header bg-primary text-white">
+        Sales and Customer Interaction
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Boost Your Car Sales</h5>
+        <p class="card-text">
+            Effective sales techniques and excellent customer service are key to a successful car dealership. Here are some tips to help you enhance your sales:
+        </p>
+        <ul>
+            <li>Understand your customer's needs and preferences.</li>
+            <li>Provide detailed and accurate information about each car.</li>
+            <li>Offer test drives to let customers experience the car firsthand.</li>
+            <li>Follow up with potential buyers and provide personalized assistance.</li>
+            <li>Ensure a smooth and transparent purchasing process.</li>
+        </ul>
+        <p class="card-text">
+            Remember, building strong relationships with your customers can lead to repeat business and referrals. Keep in touch with your customers even after the sale to ensure their satisfaction and address any concerns they might have.
+        </p>
+        <a href="mailto:support@autoshop.com" class="btn btn-secondary">Contact Support</a>
+    </div>
+</div>
