@@ -3,9 +3,9 @@ using Autoshop.Domain;
 
 namespace Autoshop.Infrastructure
 {
-    public class JewelryStoreContext : DbContext
+    public class CarShopContext : DbContext
     {
-        public JewelryStoreContext() : base("name=DefaultConnection")
+        public CarShopContext() : base("name=DefaultConnection")
         {
         }
 
@@ -14,6 +14,7 @@ namespace Autoshop.Infrastructure
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
     }
 
 }

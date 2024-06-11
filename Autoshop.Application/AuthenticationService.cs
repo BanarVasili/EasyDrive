@@ -8,7 +8,7 @@ namespace Autoshop.Application
 {
     public class AuthenticationService
     {
-        private readonly JewelryStoreContext _storeContext = new JewelryStoreContext();
+        private readonly CarShopContext _storeContext = new CarShopContext();
 
         // Authenticates a user based on username and password.
         public Customer ValidateLogin(string userName, string password)
